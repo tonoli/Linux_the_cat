@@ -6,11 +6,11 @@
 /*   By: itonoli- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/15 19:08:31 by itonoli-          #+#    #+#             */
-/*   Updated: 2017/06/20 20:03:59 by itonoli-         ###   ########.fr       */
+/*   Updated: 2017/06/20 23:36:50 by itonoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "../inc/get_next_line.h"
 
 int		ft_stocker(int fd, char **line, char *buf, char **stock)
 {

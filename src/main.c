@@ -6,11 +6,11 @@
 /*   By: itonoli- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/17 12:38:23 by itonoli-          #+#    #+#             */
-/*   Updated: 2017/01/17 19:56:49 by itonoli-         ###   ########.fr       */
+/*   Updated: 2017/06/20 23:35:51 by itonoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "../inc/get_next_line.h"
 
 int     main(int argc, char **argv)
 {

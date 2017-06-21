@@ -6,7 +6,7 @@
 #    By: itonoli- <itonoli-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/06/20 20:07:13 by itonoli-          #+#    #+#              #
-#    Updated: 2017/06/20 20:14:35 by itonoli-         ###   ########.fr        #
+#    Updated: 2017/06/20 23:43:19 by itonoli-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ OBJ_PATH = obj/
 
 SRC = $(addprefix $(SRC_PATH),$(SRC_NAME))
 OBJ = $(addprefix $(OBJ_PATH),$(OBJ_NAME))
-LIB = $(addprefix -I,$(LIB_PATH))
+#LIB = $(addprefix -I,$(LIB_PATH))
 
 #COMPILATION
 CC = gcc
@@ -43,17 +43,16 @@ $(NAME):$(OBJ)
 
 $(OBJ_PATH)%.o:$(SRC_PATH)%.c
 		@ mkdir -p $(OBJ_PATH)
-		@ $(CC) $(FLAGS) $(LIB) -o $@ -c $<
+		@ $(CC) $(FLAGS)  -o $@ -c $<
 
 cat_linux_only:
 		@ $(CC) $(FLAGS) -I libft/ -I./minilibx/ -c $(SRC)
 		@ $(CC) $(FLAGS) -g -o $(NAME) $(OBJ) $(LIBFT) $(MLX)
-		@ echo "\033[32mCompilation done : cat_linux is ready to be used\033[0m"
+		@ echo "\033[32mCompilation done : cat_linux 🍉  is ready to be used\033[0m"
 
 clean:
 		@ echo "\033[32mCleaning the following files: \033[0m"
 		@ make -C libft/ clean
-		@ make -C minilibx/ clean
 		@ rm -vf $(OBJ)
 		@ rm -rfv $(OBJ_PATH)
 		@ echo "\033[32mThe cleaning is done my friend!\033[0m"
@@ -61,11 +60,10 @@ clean:
 fclean: clean
 		@ rm -vf $(NAME)
 		@ make -C libft/ fclean
-		@ make -C minilibx/ fclean
 		@ echo "\033[32mThe cleaning is done my friend!\033[0m"
 
 norm:
 		@ echo "\033[34;1mNorminette...\033[0m"
-		@ norminette src inc
+		@ norminette src inc libft
 
 re: fclean all

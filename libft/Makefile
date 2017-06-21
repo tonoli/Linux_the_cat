@@ -6,7 +6,7 @@
 #    By: itonoli- <itonoli-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/06 18:25:44 by itonoli-          #+#    #+#              #
-#    Updated: 2017/05/21 15:46:55 by itonoli-         ###   ########.fr        #
+#    Updated: 2017/06/20 23:39:33 by itonoli-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -78,7 +78,6 @@ ft_isupper.c \
 ft_lstadd_back.c \
 ft_lstsize.c \
 ft_join.c \
-get_next_line.c \
 ft_char_counter.c \
 ft_puterror.c \
 ft_tablen.c \
