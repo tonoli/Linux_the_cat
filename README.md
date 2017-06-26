@@ -57,3 +57,46 @@ Alright, the last command created a `cat_linux` executable in your directory. No
 It should read the whole file to you. Kinda like a basic `cat` implementation without the options.
 
 **NOTE:** The lyrics in the text file are from [Claudia Lewis][15] by [M83][16] ;)
+
+##How did I came up with this function? 
+
+#Rappels : 
+ 
+int Read (int fd, char * buf, int BUFF_SIZE) 
+read renvoi = 1 quand il arrive lire  n octets sans arriver à la fin du fichier
+read renvoi = 0 quand il arrive en fin de fichier 
+read renvoi = -1 en cas d’erreur
+ 
+* ft_stock_to_line
+ 
+Contexte : ret renvoi 0 et stock != NULL (i.e. dans une lecture précédente nous avons “trop” lu et avons placé l'excès de lecture dans la var statique stock)
+ 
+Objectif: le but de cette fonction est de mettre dans line la première ligne qui apparaît dans stock et placer le pointeur de stock après le \n s’il y en a. 
+ 
+Explication:
+tmp = stockage de ce qu’il reste de stock lors de la première occurrence de ‘\n’ 
+len = la longueur de la ligne qu’on traite
+on copie len caractères de stock vers line
+si le pointeur tmp est non NULL (i.e. il reste au moins une autre ligne dans stock) on avance le pointeur tmp de 1 pour ne pas commencer le nouveau stock par \n
+on fait désormais pointer stock sur le premier char après le \n de tmp! 
+et on retourne 1! 
+ 
+* ft_stocker
+ 
+Contexte : ret renvoi le nombre d’octets lus et stock peut être NULL ou contenir le début de la ligne qui a été lu par une lecture précédente qui a “trop” lu
+ 
+Objectif : le but de cette fonction est de join ce qu’il y a dans le (char *)buff (correspondant a la fin de (char *)line) et le début de (char *)line qui se trouve dans (char *)stock. Il doit également placer dans stock le reste du buffer après le \n.
+ 
+Si (char *)stock contenait déjà une ligne il faut la mettre dans line et mettre ce qu’il y a dans le buff a la suite de stock
+Si ni (char *)stock ni (char *)buf ne contiennent des \n il faut stocker lire encore jusqu'à trouver le \n dans (char *)buf : mettre stock + debut de buff jusqu’au \n et mettre le reste de buf après le \n dans stock
+ 
+ 
+Explication:   
+ft_stocker va retourner 1 quand il aura placé correctement la ligne dans (char *)line si non il revoit 0
+if (stock == NULL)  
+ 
+Fonctions secondaires 
+char *ft_strcjoin (char *s1, char *s2, int i) 
+cette fonction permet de join s1 + s2 si i = 0  et s2 + s1 si i = 1
+ 
+
