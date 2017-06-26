@@ -6,7 +6,7 @@
 #    By: itonoli- <itonoli-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/06/20 20:07:13 by itonoli-          #+#    #+#              #
-#    Updated: 2017/06/20 23:43:19 by itonoli-         ###   ########.fr        #
+#    Updated: 2017/06/26 16:09:58 by itonoli-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,7 +46,7 @@ $(OBJ_PATH)%.o:$(SRC_PATH)%.c
 		@ $(CC) $(FLAGS)  -o $@ -c $<
 
 cat_linux_only:
-		@ $(CC) $(FLAGS) -I libft/ -I./minilibx/ -c $(SRC)
+		@ $(CC) $(FLAGS) -I libft/ -c $(SRC)
 		@ $(CC) $(FLAGS) -g -o $(NAME) $(OBJ) $(LIBFT) $(MLX)
 		@ echo "\033[32mCompilation done : cat_linux 🍉  is ready to be used\033[0m"
 
