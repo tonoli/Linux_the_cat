@@ -6,14 +6,29 @@
 #    By: itonoli- <itonoli-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/06 18:25:44 by itonoli-          #+#    #+#              #
-#    Updated: 2017/06/20 23:39:33 by itonoli-         ###   ########.fr        #
+#    Updated: 2017/06/26 21:07:22 by itonoli-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+#SELL COLORS
+LRED = \033[31m
+GREEN = \033[32m
+YELLOW = \033[33m
+BLUE = \033[34m
+LBLUE = \033[34;1m
+PINK = \033[35m
+LCYAN = \033[36m
+END = \033[0m
+
+# NAME
+NAME = libft.a
+
+#COMPILATION
 CC= gcc
 FLAGS= -Wall -Wextra -Werror
-NAME= libft.a
-SRC= ft_memset.c \
+
+#SOURCES AND OBJECTS
+SRC_NAME= ft_memset.c \
 ft_bzero.c \
 ft_memcpy.c \
 ft_memccpy.c \
@@ -78,6 +93,7 @@ ft_isupper.c \
 ft_lstadd_back.c \
 ft_lstsize.c \
 ft_join.c \
+get_next_line.c \
 ft_char_counter.c \
 ft_puterror.c \
 ft_tablen.c \
@@ -85,22 +101,36 @@ ft_memtab.c \
 ft_power.c \
 ft_strtol.c \
 
-OBJ= $(SRC:.c=.o)
+OBJ_NAME= $(SRC_NAME:.c=.o)
+
+SRC_PATH = src/
+OBJ_PATH = obj/
+
+SRC = $(addprefix $(SRC_PATH),$(SRC_NAME))
+OBJ = $(addprefix $(OBJ_PATH),$(OBJ_NAME))
+
 
 all: $(NAME)
 
-$(NAME):
-	@ $(CC) $(FLAGS) -c $(SRC)
+$(NAME):$(OBJ)
 	@ ar rc  $(NAME) $(OBJ)
 	@ ranlib $(NAME)
-	@ echo  "\033[32mLIBFT : Compilation done !\033[0m"
+	@ echo  "$(PINK)L$(END)$(LBLUE)I$(END)$(YELLOW)B$(END)$(GREEN)F$(END)$(LRED)T $(END):$(GREEN) Compilation done !$(END)"
+
+$(OBJ_PATH)%.o:$(SRC_PATH)%.c
+	@ mkdir -p $(OBJ_PATH)
+	@ $(CC) $(FLAGS) -o $@ -c $<
 
 clean:
-	@ rm -f $(OBJ)
+	@ rm -rf $(OBJ_PATH)
 
 fclean: clean
 	@ rm -f $(NAME)
 
+norm:
+	@ echo "\033[34;1mNorminette...\033[0m"
+	@ norminette src inc
+
 re: fclean  all
 
-.PHONY: all clean
+.PHONY: fclean all clean
