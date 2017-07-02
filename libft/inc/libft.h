@@ -6,7 +6,7 @@
 /*   By: itonoli- <itonoli-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 18:55:20 by itonoli-          #+#    #+#             */
-/*   Updated: 2017/06/26 22:28:00 by itonoli-         ###   ########.fr       */
+/*   Updated: 2017/07/01 23:44:05 by itonoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 # include <fcntl.h>
 # include <math.h>
 # define ABS(value) ((value < 0) ? -(value) : value)
-# define BUFF_SIZE 1
 # define ALPHABET "0123456789abcdefghijklmnopqrstuvwxyz"
 
 typedef struct	s_list
