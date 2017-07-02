@@ -29,34 +29,23 @@ I added a main file called **main.c**, it takes a file name as an argument, open
 
 Alright, so first of all, download/clone this repo:
 
-	git clone https://github.com/tonoli/cat_linux
+	git clone https://github.com/tonoli/Linux_the_cat
 	
 Get into it and build the library:
 	
 	cd cat_linux
-	make -C libft/
+	make
 
-Give it some time to compile all the files.
+Give it some time to compile all the files. 
 
-Build the executable:
-	
-	gcc -Wall -Wextra -Werror -I./libft/includes/ -L./libft -lft -o gnl get_next_line.c main.c
+BOOM ./cat_linux is ready to be used!
 
--I tells the compiler where your library header files are. `./libft/includes/` in this case
 
--L tells it where your library resides. `./libft` here
+Alright, now we have a `cat_linux` executable in your directory. Now test it with:
 
--l takes the name of your library. This is the set of characters that come after `lib` in your library name.
-
-**NOTE:** -L and -l might look a little bit too much, you could replace those flags with `libft/libft.a` if you want.
-
-Alright, the last command created a `cat_linux` executable in your directory. Now test it with:
-
-	./cat_linux m83.txt
+	./cat_linux metalica.txt
 
 It should read the whole file to you. Kinda like a basic `cat` implementation without the options.
-
-**NOTE:** The lyrics in the text file are from [Claudia Lewis][15] by [M83][16] ;)
 
 ##How did I came up with this function? 
 
