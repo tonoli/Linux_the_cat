@@ -21,17 +21,19 @@ After finishing this project, you'll definitely learn some more about static var
 
 My code is not the best, but it passed all the 42 tests successfully.
 
-### How do I use it?
+### Install and use it!
 
 I added a main file called **main.c**, it takes a file name as an argument, opens it and passes the file descriptor (fd) to get_next_line until get_next_line returns -1 or 0.
 
 **Note:** get_next_line returns -1, 0, 1 depending on wether an error has occurred, the reading has been completed or a line has been read respectively.
 
-Alright, so first of all, download/clone this repo:
+* Install
+
+Download/clone this repo:
 
 	git clone https://github.com/tonoli/Linux_the_cat
 	
-Get into it and build the library:
+Get into it and build:
 	
 	cd cat_linux
 	make
@@ -47,10 +49,11 @@ Alright, now we have a `cat_linux` executable in your directory. Now test it wit
 
 It should read the whole file to you. Kinda like a basic `cat` implementation without the options.
 
-##How did I came up with this function? 
+## How did I came up with this function? 
 
-#Rappels : 
- 
+### Sorry this is in French, I'll translate that one day :)
+
+Rappel : 
 int Read (int fd, char * buf, int BUFF_SIZE) 
 read renvoi = 1 quand il arrive lire  n octets sans arriver à la fin du fichier
 read renvoi = 0 quand il arrive en fin de fichier 
